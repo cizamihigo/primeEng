@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Works
 # Create your views here.
 def homepage(request):
-    return HttpResponse("This is my very first home page in <strong> Django</strong> wow!!")
+    return render( request = request,
+                   template_name = "main/template/main/home.html",
+                   context={"works": Works.objects.all})
