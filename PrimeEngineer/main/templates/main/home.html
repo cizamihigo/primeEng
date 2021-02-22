@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page already</title>
+    <title>PrimeEng</title>
+    {% load static %}
+    <link href="{% static 'tinymce/css/prism.css'%}" rel= "stylesheet">
+
 </head>
 <body>
 
     <h1>My home page till now</h1>
-    
+    {% for w in works %}
+    <p>{{w}}</p>
+    <p>{{w.PublishDate}}</p>
+    <p>{{w.Description|safe}}</p>
+    <br> <br> <br>
+    {% endfor %}
 </body>
+<script src="{% static 'tinymce/js/prism.js' %}"></script>
 </html>
