@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--title>Cleaning</title>-->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="main/css/fontawesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 
@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light text-uppercase font-weight-bold">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img width="250" src="imgs/logo.png" alt="#" /></a>
+            <a class="navbar-brand" href="/"><img width="250" src="{% static 'imgs/logo.png' %}" alt="#" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#show-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,25 +27,19 @@
             <div class="collapse navbar-collapse" id="show-menu">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="/register">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#company">Company</a>
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact Us</a>
                     </li>
                     <li class="nav-item search">
-                        <a class="nav-link"><i class="fas fa-search"></i></a>
+                        <a class="nav-link"><i class="fas fa-search"></i>search</a>
                         <form>
                             <input type="search">
                         </form>
@@ -58,4 +52,24 @@
     {% endblock %}
 </body>
 <script src="{% static 'tinymce/js/prism.js' %}"></script>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script>
+    $(function () {
+        
+        'use strict';
+        
+        $('.navbar ul.navbar-nav li.search a').on('click', function () {
+            $(this).siblings('form').fadeToggle();
+        });
+        
+        $('.navbar ul.navbar-nav li a, footer ul.main-list li a').on('click', function (e) {
+            
+            var getAttr = $(this).attr('href');
+            
+            e.preventDefault();
+            $('html').animate({scrollTop: $(getAttr).offset().top}, 1000);
+        });
+    });
+</script>
 </html>

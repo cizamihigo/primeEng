@@ -6,15 +6,38 @@
 <head>
 </head>
 <body>
-
-    <h1>My home page till now</h1>
-    {% for w in works %}
-    <p>{{w}}</p>
-    <p>{{w.PublishDate}}</p>
-    <p>{{w.Description|safe}}</p>
-    <br> <br> <br>
-    {% endfor %}
+<br><br><br>
+    <br><br>
+    
+    <div class="prices">
+        <div class="container">
+            <div id="company"></div>
+            <h2 class="text-center text-uppercase">Our <span>Engineering works</span></h2>
+            <div class="row">
+                {% for w in works %}
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="item f-item">
+                        <div>
+                            <h5>{{w}}</h5>
+                            <p>{{w.PublishDate}}</p>
+                        </div>
+                        <div>
+                            <p><span> * * </span> <span>{{w.domaine}}</span></p>
+                            <ul>
+                                <li><p>{{w.Description|safe}}</p></li>
+                                
+                            </ul>
+                            <button><a href="#">Get started</a></button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
 </body>
-
+    
+    <br> <br> <br>
 </html>
 {% endblock %}
