@@ -7,3 +7,7 @@ def HomePage(request):
     return render(request=request,
                    template_name="main/home.html",
                    context={"works": Works.objects.all})
+
+def Head(request):
+    return render(request=request,
+                   template_name="/main/templates/header.html")

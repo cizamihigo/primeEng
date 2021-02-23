@@ -20,4 +20,7 @@ urlpatterns = [
     path('', include('main.urls')),
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
+    #path('main/css/', include('main/css'),
+    path('main/templates/header.html', include('main.urls')),
+
 ]

@@ -20,4 +20,5 @@ from . import views
 app_name ='main'
 urlpatterns = [
     path('', views.HomePage, name= 'HomePage'),
+    path('/main/templates/header.html', views.Head, name= 'Head'),
 ]
