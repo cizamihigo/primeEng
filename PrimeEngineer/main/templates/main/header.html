@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeEng</title>
+    {% load static %}
+    <link href="{% static 'tinymce/css/prism.css'%}" rel= "stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--title>Cleaning</title>-->
+    <link rel="stylesheet" href="main/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main/css/style.css">
+    <link rel="stylesheet" href="main/css/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+<script src="{% static 'tinymce/js/prism.js' %}"></script>
+</html>
